@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>为什么是压着的-----层级不够大</title>
+    <style>
+        #div1{
+            width:100px;
+            height: 100px;
+            position: relative;
+
+        }
+        #border {
+
+            left: 25px;
+            top: 0;
+            width: 150px;
+            border-top: 7px solid palegreen;
+            border-width: 17px;
+            margin-top: 38px;
+            /*/!*transform: rotate(7deg);*!/ 旋转度数 */
+            /*-ms-transform:rotate(7deg); 	/!* IE 9 *!/*/
+            /*-moz-transform:rotate(7deg); 	/!* Firefox *!/*/
+            /*-webkit-transform:rotate(7deg); /!* Safari 和 Chrome *!/*/
+            /*-o-transform:rotate(7deg); 	/!* Opera *!/*/
+            position: relative;
+            /*margin: 50px 0 0 100px;*/
+            z-index: 100;
+
+        }
+
+        /*第一个圆圈*/
+        .c{
+
+            width: 10px;
+            height: 10px;
+            border: 3px solid black;
+            border-radius: 50%;
+
+            margin-top: 0px;
+            margin-left: 12px;
+            position: absolute;
+            top: 0;
+
+        }
+/*第二个圆圈总被压在下面*/
+        .c1{
+            position: relative;
+            z-index: 9999;
+            margin-top: 0px;
+            width: 10px;
+            height: 10px;
+            border: 3px solid black;
+            border-radius: 50%;
+
+            /*margin-top: 5px;*/
+            margin-left: 12px;
+            margin-right: 7px;
+
+
+        }
+
+    </style>
+</head>
+<body>
+<div id="div1">
+    <div id="border"></div>
+
+    <!--圆圈 -->
+    <div class="c">
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+    </div>
+</div>
+</body>
+</html>
